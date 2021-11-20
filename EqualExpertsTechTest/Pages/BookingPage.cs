@@ -19,7 +19,7 @@ namespace EqualExpertsTechTest.Pages
 
         IWebElement txtForeName => Driver.FindElement(By.Id("firstname"));
         IWebElement txtSurName => Driver.FindElement(By.Id("lastname"));
-        IWebElement txtPrice => Driver.FindElement(By.Id("Price"));
+        IWebElement txtPrice => Driver.FindElement(By.Id("totalprice"));
         IWebElement dropdownDeposit => Driver.FindElement(By.Id("depositpaid"));
         IWebElement txtCheckIn => Driver.FindElement(By.Id("checkin"));
         IWebElement txtCheckOut => Driver.FindElement(By.Id("checkout"));

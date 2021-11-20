@@ -105,8 +105,8 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("I navigate to the booking application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
-testRunner.When("I Enter \"<forename>\" and \"<surname>\" and \"<price>\" and \"<deposit>\" and \"<checkin>" +
-                        "\" and \"<checkout>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I Enter \"forename\" and \"surname\" and \"price\" and \"deposit\" and \"checkin\" and \"che" +
+                        "ckout\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();
