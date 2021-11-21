@@ -17,8 +17,6 @@ namespace EqualExpertsTechTest.Hooks
         public void BeforeScenario()
         {
 
-            //new DriverManager().SetUpDriver(new ChromeConfig());
-
             OpenQA.Selenium.Chrome.ChromeOptions options = new OpenQA.Selenium.Chrome.ChromeOptions();
             options.AddArgument("--headless");
 
@@ -30,10 +28,11 @@ namespace EqualExpertsTechTest.Hooks
 
         }
 
+
         [AfterScenario]
         public void AfterScenario()
         {
-            //_driverHelper.Driver.Quit();
+            _driverHelper.Driver.Quit();
         }
     }
 }

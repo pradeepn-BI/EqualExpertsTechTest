@@ -29,10 +29,9 @@ namespace EqualExpertsTest.Tests.Steps
         [Given(@"I navigate to the booking application")]
         public void GivenINavigateToTheBookingApplication()
         {
-            _driverHelper.Driver.Navigate().GoToUrl("http://hotel-test.equalexperts.io/");
+            _driverHelper.Driver.Navigate().GoToUrl(ConstantHelpers.URL);
            
         }
-
         [When(@"I Enter ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)""")]
         public void WhenIEnterAndAndAndAndAnd(string foreName, string surName, string price, string deposit, string checkIn, string checkOut)
         {

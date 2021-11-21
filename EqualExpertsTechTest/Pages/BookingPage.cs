@@ -10,7 +10,7 @@ namespace EqualExpertsTechTest.Pages
 
     public class BookingPage
     {
-
+        
 
         private IWebDriver Driver;
 
@@ -29,6 +29,7 @@ namespace EqualExpertsTechTest.Pages
         IWebElement txtCheckIn => Driver.FindElement(ConstantHelpers.CHECK_IN);
         IWebElement txtCheckOut => Driver.FindElement(ConstantHelpers.CHECK_OUT);
         IWebElement btnSave => Driver.FindElement(ConstantHelpers.SAVE_BTN);
+        IWebElement deletebutton => Driver.FindElement(ConstantHelpers.DELETE_BTN);
 
         public void EnterBookingDetails(string foreName, string surName, string price, string deposit, string checkIn, string checkOut)
         {
@@ -66,6 +67,34 @@ namespace EqualExpertsTechTest.Pages
             }
             
         }
+
+
+        public bool CheckDeleteBooking()
+        {
+            bool status;
+            try
+            {
+                status = deletebutton.Displayed;
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+            return status;
+
+        }
+
+
+        public void clickdeletebutton()
+        {
+            
+                deletebutton.Click();
+         }
+        }
+
     }
-}
+
 

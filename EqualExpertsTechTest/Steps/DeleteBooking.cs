@@ -1,54 +1,71 @@
-﻿using OpenQA.Selenium;
+﻿using EqualExpertsTechTest.Helpers;
+using EqualExpertsTechTest.Pages;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TechTalk.SpecFlow;
 
 namespace EqualExpertsTechTest.Steps
 {
-   public class DeleteBooking
+    [Binding]
+    public class DeleteBooking
     {
+        private DriverHelper _driverHelper;
 
-        private IWebDriver Driver;
+
+        BookingPage bookingPage;
 
 
-        public DeleteBooking(IWebDriver driver)
+
+        public DeleteBooking(DriverHelper driverHelper)
         {
-            Driver = driver;
+            _driverHelper = driverHelper;
+            bookingPage = new BookingPage(_driverHelper.Driver);
         }
 
 
-        IWebElement deletebutton => Driver.FindElement(By.XPath("//input[@value = 'Delete']"));
 
-
-        public bool checkDeleteBooking() {
-          bool status = false;
+        [When(@"there is a booking exists")]
+        public void WhenThereIsABookingExists()
+        {
             try
             {
-                status = deletebutton.Displayed;
-                
+                if (bookingPage.CheckDeleteBooking() == false)
+                {
+                    Console.WriteLine("Booking Dosn't Exists.");
+                }
+                else
+                {
+                   
+                }
+                {
+                    Console.WriteLine("No Booking exists Please create a booking to delete!!!");
+
+                }
             }
             catch (Exception e)
             {
 
                 throw e;
             }
-
-            return status;
-        
+            
+            
         }
-   
-        
-        public void clickdeletebutton()
+
+ 
+
+        [When(@"I click on the delete button")]
+        public void WhenIClickOnTheDeleteButton()
         {
-            bool status = checkDeleteBooking();
-            if (status == true)
-            {
-                deletebutton.Click();
-            }
+            bookingPage.clickdeletebutton();
         }
-    
-    
+
+        [Then(@"the booking should be delted")]
+        public void ThenTheBookingShouldBeDelted()
+        {
+            
+        }
+
     }
-
-
 }
