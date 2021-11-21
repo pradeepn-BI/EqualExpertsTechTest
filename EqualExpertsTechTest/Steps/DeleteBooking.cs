@@ -1,6 +1,7 @@
 ﻿using EqualExpertsTechTest.Helpers;
 using EqualExpertsTechTest.Pages;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,24 +30,17 @@ namespace EqualExpertsTechTest.Steps
         [When(@"there is a booking exists")]
         public void WhenThereIsABookingExists()
         {
-            try
-            {
+            
                 if (bookingPage.CheckDeleteBooking().Equals(true))
                 {
-                    Console.WriteLine("In the if condition");
-                    bookingPage.clickdeletebutton();
+                    Console.WriteLine("Booking Exists");
+                   
                 }
                 else
                 {
-                    bookingPage.EnterBookingDetails("Kevin", "John", "1234", "true", "2021-12-01", "2021-12-04");
-                    bookingPage.ClickSave();
-                    bookingPage.clickdeletebutton();
+                Console.WriteLine("Booking doesn't exists!!!");
                 }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            
             
             
         }
@@ -56,13 +50,31 @@ namespace EqualExpertsTechTest.Steps
         [When(@"I click on the delete button")]
         public void WhenIClickOnTheDeleteButton()
         {
-            bookingPage.clickdeletebutton();
+            if (bookingPage.CheckDeleteBooking().Equals(true))
+            {
+                bookingPage.clickdeletebutton();
+            }
+            else
+            {
+                bookingPage.EnterBookingDetails("Kevin", "John", "1234", "true", "2021-12-01", "2021-12-04");
+                bookingPage.ClickSave();
+                if (bookingPage.CheckDeleteBooking().Equals(true))
+                {
+                    bookingPage.clickdeletebutton();
+                }
+                else
+                {
+                    Console.WriteLine("Delete Button is not avialable");
+                }
+                
+            }
+
         }
 
         [Then(@"the booking should be delted")]
         public void ThenTheBookingShouldBeDelted()
         {
-            
+            Console.WriteLine("Booking Deleted!!");
         }
 
     }

@@ -8,7 +8,7 @@ namespace EqualExpertsTechTest.Helpers
 {
     public class CustomControl : DriverHelper
     {
-
+       
         public static void EnterText(IWebElement webElement, string value) => webElement.SendKeys(value);
 
         public static void Click(IWebElement webElement) => webElement.Click();
@@ -25,10 +25,14 @@ namespace EqualExpertsTechTest.Helpers
             selectElement.SelectByText(text);
         }
 
+     
+
+    }
+
 
 
 
 
 
     }
-}
+

@@ -36,7 +36,7 @@ namespace EqualExpertsTechTest.Pages
                 CustomControl.EnterText(TxtForeName, foreName);
                 CustomControl.EnterText(TxtSurName, surName);
                 CustomControl.EnterText(TxtPrice, price);
-                CustomControl.SelectByValue(DropdownDeposit, deposit);
+                CustomControl.SelectByText(DropdownDeposit, deposit);
                 CustomControl.EnterText(TxtCheckIn, checkIn);
                 CustomControl.EnterText(TxtCheckOut, checkOut);
     
@@ -55,10 +55,20 @@ namespace EqualExpertsTechTest.Pages
 
         public bool CheckDeleteBooking()
         {
-            bool status;
-            status = Deletebutton.Displayed;
-            Console.WriteLine(status);
-            return status;
+
+            bool Status = false;
+            try
+            {
+                Status = Deletebutton.Displayed;
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Delte Button Doesnot Exisit");
+            }
+           
+            return Status ;
+            
 
         }
 

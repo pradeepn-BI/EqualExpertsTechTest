@@ -18,6 +18,6 @@ namespace EqualExpertsTechTest.Helpers
         public static By CHECK_IN = By.Id("checkin");
         public static By CHECK_OUT = By.Id("checkout");
         public static By SAVE_BTN = By.XPath("//input[@value = ' Save ']");
-        public static By DELETE_BTN = By.XPath("//input[@value = 'Delete']");
+        public static By DELETE_BTN = By.XPath("//input[@value='Delete']");
     }
 }
