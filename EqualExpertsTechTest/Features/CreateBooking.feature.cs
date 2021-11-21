@@ -111,19 +111,19 @@ testRunner.When(string.Format("I Enter \"{0}\" and \"{1}\" and \"{2}\" and \"{3}
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verfify the user can create hotel booking, Test", SourceLine=7)]
-        public virtual void VerfifyTheUserCanCreateHotelBooking_Test()
+        [TechTalk.SpecRun.ScenarioAttribute("Verfify the user can create hotel booking, Daniel", SourceLine=7)]
+        public virtual void VerfifyTheUserCanCreateHotelBooking_Daniel()
         {
 #line 3
-this.VerfifyTheUserCanCreateHotelBooking("Test", "Test", "3332", "false", "2021-12-04", "2021-12-31", ((string[])(null)));
+this.VerfifyTheUserCanCreateHotelBooking("Daniel", "Trim", "200", "false", "2021-12-04", "2021-12-08", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Verfify the user can create hotel booking, Test1", SourceLine=7)]
-        public virtual void VerfifyTheUserCanCreateHotelBooking_Test1()
+        [TechTalk.SpecRun.ScenarioAttribute("Verfify the user can create hotel booking, Keith", SourceLine=7)]
+        public virtual void VerfifyTheUserCanCreateHotelBooking_Keith()
         {
 #line 3
-this.VerfifyTheUserCanCreateHotelBooking("Test1", "Test2", "3342", "true", "2021-12-04", "2021-12-31", ((string[])(null)));
+this.VerfifyTheUserCanCreateHotelBooking("Keith", "John", "500", "true", "2021-12-15", "2021-12-18", ((string[])(null)));
 #line hidden
         }
     }
