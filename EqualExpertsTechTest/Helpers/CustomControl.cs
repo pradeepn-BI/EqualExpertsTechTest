@@ -8,9 +8,9 @@ namespace EqualExpertsTechTest.Helpers
 {
     public class CustomControl : DriverHelper
     {
-       
+       //this method is to enter values in to the text fields
         public static void EnterText(IWebElement webElement, string value) => webElement.SendKeys(value);
-
+        // to click buttons and dropdowns
         public static void Click(IWebElement webElement) => webElement.Click();
 
         public static void SelectByValue(IWebElement webElement, string value)
