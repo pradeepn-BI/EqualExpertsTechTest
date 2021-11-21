@@ -31,8 +31,9 @@ namespace EqualExpertsTechTest.Steps
         {
             try
             {
-                if (bookingPage.CheckDeleteBooking() == true)
+                if (bookingPage.CheckDeleteBooking().Equals(true))
                 {
+                    Console.WriteLine("In the if condition");
                     bookingPage.clickdeletebutton();
                 }
                 else

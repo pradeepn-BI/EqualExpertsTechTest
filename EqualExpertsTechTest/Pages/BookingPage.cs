@@ -56,11 +56,8 @@ namespace EqualExpertsTechTest.Pages
         public bool CheckDeleteBooking()
         {
             bool status;
-            
-                status = Deletebutton.Displayed;
-
-            
-
+            status = Deletebutton.Displayed;
+            Console.WriteLine(status);
             return status;
 
         }
