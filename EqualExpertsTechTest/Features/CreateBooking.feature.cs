@@ -115,7 +115,7 @@ testRunner.When(string.Format("I Enter \"{0}\" and \"{1}\" and \"{2}\" and \"{3}
         public virtual void VerfifyTheUserCanCreateHotelBooking_Daniel()
         {
 #line 3
-this.VerfifyTheUserCanCreateHotelBooking("Daniel", "Trim", "200", "false", "2021-12-04", "2021-12-08", ((string[])(null)));
+this.VerfifyTheUserCanCreateHotelBooking("Daniel", "Trim", "200", "false", "2021-12-04", "2021-12-09", ((string[])(null)));
 #line hidden
         }
         

@@ -58,13 +58,10 @@ namespace EqualExpertsTechTest.Steps
             {
                 bookingPage.EnterBookingDetails("Kevin", "John", "1234", "true", "2021-12-01", "2021-12-04");
                 bookingPage.ClickSave();
+            
                 if (bookingPage.CheckDeleteBooking().Equals(true))
                 {
                     bookingPage.clickdeletebutton();
-                }
-                else
-                {
-                    Console.WriteLine("Delete Button is not avialable");
                 }
                 
             }
@@ -74,7 +71,10 @@ namespace EqualExpertsTechTest.Steps
         [Then(@"the booking should be delted")]
         public void ThenTheBookingShouldBeDelted()
         {
-            Console.WriteLine("Booking Deleted!!");
+            while (bookingPage.CheckDeleteBooking()!=false)
+            {
+                bookingPage.clickdeletebutton();
+            }
         }
 
     }

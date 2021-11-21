@@ -22,9 +22,8 @@ namespace EqualExpertsTechTest.Hooks
 
             Console.WriteLine("Setup");
 
-            //Using TestProject OpenSDK replacing the existing WebDriverManager
-            //Note: Here the Token is taken from the .runsettings file
-            _driverHelper.Driver = new TestProject.OpenSDK.Drivers.Web.ChromeDriver(null, "OiNfBhXqQoHJTXte9qAGjyJVSUs6PZ8etBbkpUt2Q3o1");
+           
+            _driverHelper.Driver = new TestProject.OpenSDK.Drivers.Web.ChromeDriver(null, "detsgm2wTgEljhsKepmOwMM8n6KHktSIli2LzFg_eQA1");
 
         }
 
