@@ -70,16 +70,16 @@ namespace EqualExpertsTechTest.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void VerfifyTheUserCanCreateHotelBooking(string foreName, string surName, string price, string deposit, string checkin, string checkout, string[] exampleTags)
+        public virtual void VerfifyTheUserCanCreateHotelBooking(string forename, string surname, string price, string deposit, string checkin, string checkout, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("ForeName", foreName);
-            argumentsOfScenario.Add("SurName", surName);
-            argumentsOfScenario.Add("Price", price);
-            argumentsOfScenario.Add("Deposit", deposit);
-            argumentsOfScenario.Add("Checkin", checkin);
-            argumentsOfScenario.Add("Checkout", checkout);
+            argumentsOfScenario.Add("forename", forename);
+            argumentsOfScenario.Add("surname", surname);
+            argumentsOfScenario.Add("price", price);
+            argumentsOfScenario.Add("deposit", deposit);
+            argumentsOfScenario.Add("checkin", checkin);
+            argumentsOfScenario.Add("checkout", checkout);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verfify the user can create hotel booking", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
@@ -105,8 +105,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("I navigate to the booking application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
-testRunner.When("I Enter \"forename\" and \"surname\" and \"price\" and \"deposit\" and \"checkin\" and \"che" +
-                        "ckout\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When(string.Format("I Enter \"{0}\" and \"{1}\" and \"{2}\" and \"{3}\" and \"{4}\" and \"{5}\"", forename, surname, price, deposit, checkin, checkout), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -116,7 +115,15 @@ testRunner.When("I Enter \"forename\" and \"surname\" and \"price\" and \"deposi
         public virtual void VerfifyTheUserCanCreateHotelBooking_Test()
         {
 #line 3
-this.VerfifyTheUserCanCreateHotelBooking("Test", "Test", "3332", "yes", "2021-12-04", "2021-12-31", ((string[])(null)));
+this.VerfifyTheUserCanCreateHotelBooking("Test", "Test", "3332", "false", "2021-12-04", "2021-12-31", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Verfify the user can create hotel booking, Test1", SourceLine=7)]
+        public virtual void VerfifyTheUserCanCreateHotelBooking_Test1()
+        {
+#line 3
+this.VerfifyTheUserCanCreateHotelBooking("Test1", "Test2", "3342", "true", "2021-12-04", "2021-12-31", ((string[])(null)));
 #line hidden
         }
     }

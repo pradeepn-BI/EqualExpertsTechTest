@@ -1,6 +1,8 @@
 ﻿using TechTalk.SpecFlow;
 using EqualExpertsTechTest.Helpers;
 using EqualExpertsTechTest.Pages;
+using EqualExpertsTechTest.Steps;
+
 
 namespace EqualExpertsTest.Tests.Steps
 {
@@ -10,7 +12,9 @@ namespace EqualExpertsTest.Tests.Steps
     {
         private DriverHelper _driverHelper;
 
+        
         BookingPage bookingPage;
+        
 
 
         public CreateBooking(DriverHelper driverHelper)
@@ -19,11 +23,14 @@ namespace EqualExpertsTest.Tests.Steps
             bookingPage = new BookingPage(_driverHelper.Driver);
         }
 
+        
+
 
         [Given(@"I navigate to the booking application")]
         public void GivenINavigateToTheBookingApplication()
         {
             _driverHelper.Driver.Navigate().GoToUrl("http://hotel-test.equalexperts.io/");
+           
         }
 
         [When(@"I Enter ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)""")]

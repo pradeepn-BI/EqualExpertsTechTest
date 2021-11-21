@@ -1,12 +1,16 @@
-﻿using OpenQA.Selenium;
+﻿using EqualExpertsTechTest.Helpers;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace EqualExpertsTechTest.Pages
 {
+
     public class BookingPage
     {
+
 
         private IWebDriver Driver;
 
@@ -17,28 +21,50 @@ namespace EqualExpertsTechTest.Pages
         }
 
 
-        IWebElement txtForeName => Driver.FindElement(By.Id("firstname"));
-        IWebElement txtSurName => Driver.FindElement(By.Id("lastname"));
-        IWebElement txtPrice => Driver.FindElement(By.Id("totalprice"));
-        IWebElement dropdownDeposit => Driver.FindElement(By.Id("depositpaid"));
-        IWebElement txtCheckIn => Driver.FindElement(By.Id("checkin"));
-        IWebElement txtCheckOut => Driver.FindElement(By.Id("checkout"));
-        IWebElement btnSave => Driver.FindElement(By.XPath("//input[@value='Save']"));
+
+        IWebElement txtForeName => Driver.FindElement(ConstantHelpers.FIRST_NAME);
+        IWebElement txtSurName => Driver.FindElement(ConstantHelpers.SUR_NAME);
+        IWebElement txtPrice => Driver.FindElement(ConstantHelpers.PRICE);
+        IWebElement dropdownDeposit => Driver.FindElement(ConstantHelpers.DEPOSIT);
+        IWebElement txtCheckIn => Driver.FindElement(ConstantHelpers.CHECK_IN);
+        IWebElement txtCheckOut => Driver.FindElement(ConstantHelpers.CHECK_OUT);
+        IWebElement btnSave => Driver.FindElement(ConstantHelpers.SAVE_BTN);
 
         public void EnterBookingDetails(string foreName, string surName, string price, string deposit, string checkIn, string checkOut)
         {
-            txtForeName.SendKeys(foreName);
-            txtSurName.SendKeys(surName);
-            txtPrice.SendKeys(price);
-            dropdownDeposit.SendKeys(deposit);
-            txtCheckIn.SendKeys(checkIn);
-            txtCheckOut.SendKeys(checkOut);
-        }
+            try
+            {
+                txtForeName.SendKeys(foreName);
+                txtSurName.SendKeys(surName);
+                txtPrice.SendKeys(price);
+                SelectElement se = new SelectElement(dropdownDeposit);
+                se.SelectByText(deposit);
+                txtCheckIn.SendKeys(checkIn);
+                txtCheckOut.SendKeys(checkOut);
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+                
+         }
+    
 
 
         public void ClickSave()
         {
-            btnSave.Click();
+            try
+            {
+                btnSave.Click();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            
         }
     }
 }

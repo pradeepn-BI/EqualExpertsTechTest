@@ -33,7 +33,7 @@ namespace EqualExpertsTechTest.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            _driverHelper.Driver.Quit();
+            //_driverHelper.Driver.Quit();
         }
     }
 }
