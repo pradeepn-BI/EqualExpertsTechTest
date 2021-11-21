@@ -31,22 +31,19 @@ namespace EqualExpertsTechTest.Steps
         {
             try
             {
-                if (bookingPage.CheckDeleteBooking() == false)
+                if (bookingPage.CheckDeleteBooking() == true)
                 {
-                    Console.WriteLine("Booking Dosn't Exists.");
+                    bookingPage.clickdeletebutton();
                 }
                 else
                 {
-                   
-                }
-                {
-                    Console.WriteLine("No Booking exists Please create a booking to delete!!!");
-
+                    bookingPage.EnterBookingDetails("Kevin", "John", "1234", "true", "2021-12-01", "2021-12-04");
+                    bookingPage.ClickSave();
+                    bookingPage.clickdeletebutton();
                 }
             }
             catch (Exception e)
             {
-
                 throw e;
             }
             
